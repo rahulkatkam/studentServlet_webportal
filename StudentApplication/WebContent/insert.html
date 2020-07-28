@@ -1,0 +1,118 @@
+<html>
+  <head>
+    <link rel="stylesheet"  >
+    <meta charset="UTF-8">
+    <meta name="veiwpoint" content="width=device-width,initial-scale=1,shrink-to-fit=no"/>
+    <link rel="stylesheet" href="./css/bootstrap.min.css"/>
+    <script>
+	    function snofun()
+	    {
+	    	var x = document.getElementById("sno").value;
+	    	var z = "^[0-9]*$";
+	    	if(x.match(z) && x > 0)
+	    	{
+	    		return true;
+	    	}			
+	    	else
+	    	{
+	    	    alert("only digits");
+	    		return false;
+	    	}
+	    }
+	    function phnfun()
+	    {
+	    	var x = document.getElementById("phn").value;
+	    	var z =  "^[0-9]*$"; 
+	    	if(x.match(z))
+	    	{
+	    		return true;
+	    	}			
+	    	else
+	    	{
+	    	    alert("only digits");
+	    		return false;
+	    	}
+	    }
+	    function namefun()
+	    {
+	    	var x = document.getElementById("name").value;
+	    	var z =   "^[A-Za-z]+$"; 
+	    	if(x.match(z))
+	    	{
+	    		return true;
+	    	}			
+	    	else
+	    	{
+	    	    alert("only alphates");
+	    		return false;
+	    	}
+	    }
+    </script>
+  </head>
+  <body>
+    <h2 align="center">STUDENT-DETAILS</h2>
+     <div  >
+ <a href="logoutServlet" class="btn btn-danger" style="     margin-left: 1270px;">logout</a>
+    </div>
+    <form action="insertStudent" method="POST" style="margin-left: 300px">
+  <div class="form-inline">
+    <label for="sno">sno:</label>
+    <input type="text" class="form-control" id="sno" name ="sno" onkeyup="return snofun()" style="width:50px; margin-left: 30px;">
+
+  </div>
+  <div class="form-inline">
+  <label for="name">name:</label>
+  <input type="text" class="form-control" name ="sname" id="name" onkeyup="return namefun()" style=" margin-left: 10px;
+    margin-top: 11px;">
+</div>
+
+    <div class="form-inline">
+    <label for="dob">DOB:   </label>
+    <input type="date" class="form-control" id="dob"  name ="dob" style="margin-left: 15px;
+    margin-top: 11px;">
+    </div>
+  <div class="form-inline" style="margin-left: -57;
+    margin-top: 11px;">
+    <label for="phn">phone-number:  </label>
+    <input type="text" class="form-control" id="phn" name ="phn" onkeyup="return phnfun()" maxlength="10" size="10" ">
+  </div>
+  	 <div class="radio" style="margin-top: 10px;">
+			<div>gender</div>
+      <label><input type="radio" name="gender" value="male">male</label>
+      <label><input type="radio" name="gender" value="female">Female</label>
+    </div>
+    	 <div class="form-check">
+    	 <div style=" margin-left: -100px;  margin-top: 20px;">KNOWN LANGUAGES:</div>
+    <input type="checkbox" class="form-check-input" id="telugu" value="telugu" name="language" >
+    <label class="form-check-label" for="telugu" >telugu</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="checkbox" class="form-check-input" id="hindhi" name="language" value="hindhi"> 
+    <label class="form-check-label" for="hindhi" >hindhi</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="checkbox" class="form-check-input" id="english" name="language"value="English">
+    <label class="form-check-label" for="english" >English</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="checkbox" class="form-check-input" id="other" name="language"value="other">
+    <label class="form-check-label" for="other" >other</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  	</div>
+  	 <div class="form-group col-md-4" style="    margin-top: 20px;">
+      <label for="inputState">department</label>
+      <select id="inputState" class="form-control" name="dept">
+        <option id ="CSE" value="CSE">CSE</option>
+        <option id="ECE" value="ECE">ECE</option>
+        <option  id="MECH" value="MECH">MECHANICAL</option>
+        <option id="CIVIL" value="CIVIL">CIVIL</option>
+        <option id="EEE" value="EEE">EEE</option>
+        
+      </select>
+   </div>
+  <div> 
+    <div class="form-group">
+  <label for="address">adress:</label>
+  <textarea class="form-control" rows="3" id="address" name ="address"></textarea>
+  </div>
+  <div>
+  <a href="./index.html" class="btn btn-primary">back</a>
+    <button type="submit" class="btn btn-primary">submit</button>
+  </div>
+
+</form>
+    </body>
+</html>
